@@ -1,24 +1,22 @@
 class PostsController < ApplicationController
+    before_filter :find_post, :except => [ :index ]
+
     def index
         @posts = Post.scoped
     end
 
     def new
-        @post = Post.new
     end
 
     def edit
-        @post = Post.find( params[ :id ] )
     end
 
     def show
-        @post = Post.find( params[ :id ] )
     end
 
     def create
-        @post = Post.new( params[:post] )
         if @post.save
-            redirect_to( post_path( @post ), :flash => { :success => "created"} )
+            redirect_to( post_path( @post ), :flash => { :success => "created" } )
         else
             flash[ :error ] = @post.errors.full_messages
             render :new
@@ -26,7 +24,6 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post = Post.find( params[:id] )
         if @post.update_attributes( params[ :post ] )
             redirect_to( posts_path, :flash => { :success => "updated" } )
         else
@@ -36,8 +33,12 @@ class PostsController < ApplicationController
     end
 
     def destroy
-        @post = Post.find( params[ :id ] )
         @post.destroy
         redirect_to( posts_path, :flash => { :success => 'deleted' } )
     end
+
+    private
+        def find_post
+            @post = params[ :id ] ? Post.find( params[ :id ] ) : Post.new( params[ :post ] )
+        end
 end
