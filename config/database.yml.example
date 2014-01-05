@@ -1,15 +1,15 @@
 development: &default
   adapter: "mysql2"
   encoding: "utf8"
-  database: "rails-template_development"
+  database: "rails-training3_development"
   host: "localhost"
   username: "root"
   password: ""
 
 test: &TEST
   <<: *default
-  database: "rails-template_test"
+  database: "rails-training3_test"
 
 production:
   <<: *default
-  database: "rails-template_production"
+  database: "rails-training3_production"
