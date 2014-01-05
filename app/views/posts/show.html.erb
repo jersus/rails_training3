@@ -1,0 +1,7 @@
+<%= link_to "Back", posts_path %>
+<div>
+    <%= @post.title %>
+    <%= @post.content %>
+</div>
+<%= link_to "edit", edit_post_path( @post ) %>
+<%= link_to "delete", post_path( @post ), :method => :delete, :confirm => "delete?" %>
