@@ -1,6 +1,6 @@
 <div>
   category :
-  <%= form.association :category, :collection => collection_for_categories %>
+  <%= form.input_field :category_id, :collection => collection_for_categories, :as => :select %>
 </div>
 <div>
   title :
