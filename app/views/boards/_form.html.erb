@@ -1,0 +1,13 @@
+<div>
+  Name :
+  <%= form.input_field :name %>
+</div>
+<div>
+  Description :
+  <%= form.input_field :description %>
+</div>
+<div>
+  Closed :
+  <%= form.input_field :closed, :as => :boolean %>
+</div>
+<%= form.submit %>

@@ -1,0 +1,13 @@
+<%= link_to "Back to Index", boards_path %>
+
+<div>
+  Name : <%= @board.name %>
+</div>
+<div>
+  Description : <%= @board.description %>
+</div>
+<div>
+  Closed : <%= @board.closed %>
+</div>
+<%= link_to "Edit", edit_board_path( @board ) %> |
+<%= link_to "Delete", post_path( @board ), :method => :delete, :confirm => "Delete boards?" %>
