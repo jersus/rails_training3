@@ -1,0 +1,19 @@
+<%= link_to "Create new category", new_category_path %>
+
+<table border="1" style="width: 80%">
+  <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Edit | Delete</th>
+  </tr>
+  <% @categories.each do |category| %>
+    <tr>
+      <th><%= category.id %></th>
+      <th><%= category.name %></th>
+      <th>
+        <%= link_to "Edit", edit_category_path( category ) %> |
+        <%= link_to "Delete", category_path( category ), :method => :delete, :confirm => "Confirm delete?" %>
+      </th>
+    </tr>
+  <% end %>
+</table>

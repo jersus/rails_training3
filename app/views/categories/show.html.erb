@@ -1,0 +1,12 @@
+<%= link_to "Back to index", categories_path %>
+
+<div>
+  ID : <%= @category.id %>
+</div>
+<div>
+  Name : <%= @category.name %>
+</div>
+<div>
+<%= link_to "Edit", edit_category_path( @category ) %> |
+<%= link_to "Delete", category_path( @category ), :method => :delete, :confirm => "Confirm delete?" %>
+</div>
