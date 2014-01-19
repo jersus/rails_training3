@@ -37,3 +37,7 @@ gem 'simple_form'
 
 # To use debugger
 # gem 'debugger'
+
+gem "jquery-ui-rails"
+gem "jquery_datepicker"
+gem "jquery-ui-themes"
