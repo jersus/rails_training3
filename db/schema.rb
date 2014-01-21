@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140118070454) do
+ActiveRecord::Schema.define(:version => 20140119165319) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20140118070454) do
     t.string   "title"
     t.integer  "category_id"
     t.text     "content"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "published_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end
