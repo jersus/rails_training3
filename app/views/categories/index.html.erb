@@ -4,12 +4,14 @@
   <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Post Count</th>
       <th>Edit | Delete</th>
   </tr>
   <% @categories.each do |category| %>
     <tr>
       <th><%= category.id %></th>
       <th><%= category.name %></th>
+      <th><%= category.posts.size %></th>
       <th>
         <%= link_to "Edit", edit_category_path( category ) %> |
         <%= link_to "Delete", category_path( category ), :method => :delete, :confirm => "Confirm delete?" %>
